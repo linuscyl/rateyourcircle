@@ -444,7 +444,7 @@ class App {
       type: "info",
       title: "How To:",
       html: INFO_TEXT,
-      footer: FOOTER_TEXT,
+      // footer: FOOTER_TEXT,
     });
   }
 
@@ -520,6 +520,7 @@ class App {
 
     // being path and move to beginning
     this.ctx.strokeStyle = "#000";
+    this.ctx.lineWidth = 10;
 
     let [x, y] = path[0];
     this.ctx.beginPath();
