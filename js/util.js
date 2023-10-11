@@ -689,7 +689,6 @@ class App {
     this.circle = finder.bestGuess;
     this.foundCircle = true;
     this.score = finder.score;
-    console.log("score: ", this.score);
     popUpResultModal(this.score);
     this.progressBar.set(this.score);
     this.draw();
