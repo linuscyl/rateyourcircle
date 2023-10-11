@@ -94,6 +94,9 @@ Canvas
 footer
 */
 .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   grid-area: footer;
   display: grid;
   grid-template: 1fr / 3fr 7fr;
