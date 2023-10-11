@@ -403,7 +403,6 @@ function popUpResultModal(score) {
       Swal.fire({
         imageUrl: "./public/img/medals/gold.jpeg",
         imageWidth: "20vw",
-        // imageHeight: "20vw",
         title: `${displayScore}% 接近圓形`,
         html: "非常好",
       });
@@ -413,17 +412,23 @@ function popUpResultModal(score) {
       Swal.fire({
         imageUrl: "./public/img/medals/silver.jpeg",
         imageWidth: "20vw",
-        // imageHeight: "20vw",
         title: `${displayScore}% 接近圓形`,
         html: "很好",
       });
       break;
 
-    case displayScore < 70:
+    case displayScore >= 50 && displayScore < 70:
       Swal.fire({
         imageUrl: "./public/img/medals/bronze.jpeg",
         imageWidth: "20vw",
-        // imageHeight: "20vw",
+        title: `${displayScore}% 接近圓形`,
+        html: "再接再厲",
+      });
+      break;
+
+    case displayScore < 50:
+      Swal.fire({
+        type: "warning",
         title: `${displayScore}% 接近圓形`,
         html: "加油",
       });
