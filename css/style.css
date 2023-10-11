@@ -17,13 +17,16 @@ div.container {
 /*
 info
 */
-.emsd-logo {
+.emsd-logo-container {
   left: 0;
-  width: fit-content;
-  height: fit-content;
+  width: 30%;
   top: 0;
   position: absolute;
   background: white;
+}
+
+.emsd-logo {
+  width: 100%;
 }
 
 .restart-button {
@@ -120,6 +123,7 @@ Progress bar
 .label-center {
   color: white;
   text-shadow: none;
+  display: none;
 }
 
 /*

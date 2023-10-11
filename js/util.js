@@ -394,6 +394,49 @@ class Finder extends Solver {
   }
 }
 
+function popUpResultModal(score) {
+  let floatScore = parseFloat(score);
+  let displayScore = parseFloat(floatScore.toFixed(2));
+
+  switch (true) {
+    case displayScore >= 90:
+      Swal.fire({
+        imageUrl: "./public/img/medals/gold.jpeg",
+        imageWidth: "20vw",
+        // imageHeight: "20vw",
+        title: `${displayScore}% 接近圓形`,
+        html: "非常好",
+      });
+      break;
+
+    case displayScore >= 70 && displayScore < 90:
+      Swal.fire({
+        imageUrl: "./public/img/medals/silver.jpeg",
+        imageWidth: "20vw",
+        // imageHeight: "20vw",
+        title: `${displayScore}% 接近圓形`,
+        html: "很好",
+      });
+      break;
+
+    case displayScore < 70:
+      Swal.fire({
+        imageUrl: "./public/img/medals/bronze.jpeg",
+        imageWidth: "20vw",
+        // imageHeight: "20vw",
+        title: `${displayScore}% 接近圓形`,
+        html: "加油",
+      });
+      break;
+
+    default:
+      Swal.fire({
+        type: "info",
+        title: `${displayScore}% 接近圓形`,
+      });
+  }
+}
+
 class App {
   constructor(
     canvasContainerID,
@@ -641,6 +684,8 @@ class App {
     this.circle = finder.bestGuess;
     this.foundCircle = true;
     this.score = finder.score;
+    console.log("score: ", this.score);
+    popUpResultModal(this.score);
     this.progressBar.set(this.score);
     this.draw();
   }
